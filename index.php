@@ -46,7 +46,7 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Registrar Transacción</h5>
-                <form>
+                <form action="Traspaso.php" method="post">
                   <div class="form-group">
                     <label for="categoria">Categoría</label>
                     <select class="form-control" id="categoria">
