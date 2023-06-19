@@ -1,3 +1,12 @@
+<?php
+$Egresos=546
+?>
+<?php
+$Ingresos=623
+?>
+<?php
+$Ahorros=837
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,7 +24,7 @@
         <div class="card bg-success text-white mb-3">
           <div class="card-body">
             <h5 class="card-title">Ingresos</h5>
-            <p class="card-text">+$10,000</p>
+            <p class="card-text">+$<?php echo $Ingresos ?></p>
           </div>
         </div>
       </div>
@@ -23,7 +32,7 @@
         <div class="card bg-danger text-white mb-3">
           <div class="card-body">
             <h5 class="card-title">Egresos</h5>
-            <p class="card-text">-$7,000</p>
+            <p class="card-text">-$<?php echo $Egresos ?></p>
           </div>
         </div>
       </div>
@@ -31,7 +40,7 @@
         <div class="card bg-warning text-white mb-3">
           <div class="card-body">
             <h5 class="card-title ">Ahorros</h5>
-            <p class="card-text">$5,000</p>
+            <p class="card-text">$<?php echo $Ahorros ?></p>
           </div>
         </div>
       </div>
