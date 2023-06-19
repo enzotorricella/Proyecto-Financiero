@@ -7,16 +7,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Inicio</a>
+          <a class="nav-link" href="index.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Transacciones.html">Transacciones</a>
+          <a class="nav-link" href="Transacciones.php">Transacciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Informes.html">Informes</a>
+          <a class="nav-link" href="Informes.php">Informes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Configuraciones.html">Configuración</a>
+          <a class="nav-link" href="Configuraciones.php">Configuración</a>
         </li>
       </ul>
     </div>
