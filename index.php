@@ -1,4 +1,4 @@
-<?php require_once 'php/requires/Resumen.php'?>
+<?php require_once 'php/requires/Resumen.php' ?>
 
 
 <!DOCTYPE html>
@@ -12,8 +12,8 @@
 </head>
 
 <body>
-<?php require_once 'php/requires/conect.php' ?>
-<?php require_once 'php/requires/nav.php'; ?>
+  <?php require_once 'php/requires/conect.php' ?>
+  <?php require_once 'php/requires/nav.php'; ?>
   <br>
   <div class="container">
     <div class="row">
@@ -37,7 +37,7 @@
         <div class="card bg-warning text-white mb-3">
           <div class="card-body">
             <h5 class="card-title ">Ahorros</h5>
-            <p class="card-text">$<?php echo $totalIngresos-$totalEgresos ?></p>
+            <p class="card-text">$<?php echo $totalIngresos - $totalEgresos ?></p>
           </div>
         </div>
       </div>
@@ -51,8 +51,8 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="card-body">
-                <?php require_once 'php/requires/traspaso.php' ?>  
-                <h5 class="card-title">Registrar Transacción</h5>
+                  <?php require_once 'php/requires/traspaso.php' ?>
+                  <h5 class="card-title">Registrar Transacción</h5>
                   <form action="" method="post">
                     <div class="form-group">
                       <label for="categoria">Categoría</label>
@@ -88,6 +88,8 @@
     </div><br><br>
 
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -97,14 +99,15 @@
       var chart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['Alimentos', 'Transporte', 'Entretenimiento'],
+          labels: ['Ingresos', 'Egresos', 'Ahorros'],
           datasets: [{
-            data: [40, 30, 20],
-            backgroundColor: ['#ff6384', '#36a2eb', '#ffce56'],
+            data: [<?= $totalIngresos ?>, <?= $totalEgresos ?>, <?= ($totalIngresos - $totalEgresos) ?>],
+            backgroundColor: ['#30c959', '#e63e2c', '#ffce56'],
           }]
         },
       });
     </script>
+
 </body>
 
 </html>
