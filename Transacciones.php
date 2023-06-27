@@ -1,14 +1,18 @@
+<?php require_once 'php/requires/Conect.php'; ?>
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel de Control Financiero</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
-<?php require_once 'php/requires/nav.php'; ?>
-<br>
+  <?php require_once 'php/requires/nav.php'; ?>
+  <br>
   <div class="container">
     <div class="row">
       <div class="col-md-6">
@@ -21,7 +25,7 @@
               <div class="form-group col-md-10">
                 <label for="mes">Fecha:</label>
                 <input type="date" id="mes" class="form-control" placeholder="fecha">
-                <button type="submit" class="btn btn-primary">Filtrar</button>  
+                <button type="submit" class="btn btn-primary">Filtrar</button>
               </div>
             </form>
           </div>
@@ -29,7 +33,7 @@
       </div>
     </div>
 
-<br>
+    <br>
     <table id="tabla-transacciones" class="table">
       <thead>
         <tr>
@@ -40,21 +44,43 @@
       </thead>
       <tbody>
         <!-- Filas de transacciones -->
-        <tr>
-          <td>2023-06-01</td>
-          <td>Compra de productos</td>
-          <td>50.00</td>
-        </tr>
-        <tr>
-          <td>2023-06-02</td>
-          <td>Pago de factura</td>
-          <td>100.00</td>
-        </tr>
-        <tr>
-          <td>2023-06-03</td>
-          <td>Transferencia bancaria</td>
-          <td>200.00</td>
-        </tr>
+        <?php
+        // Consulta SQL para obtener los datos de las transacciones de ingresos
+        $sqlIngresos = "SELECT fecha, descripcion, monto FROM ingresos";
+        $resultadoIngresos = $conn->query($sqlIngresos);
+
+        // Consulta SQL para obtener los datos de las transacciones de egresos
+        $sqlEgresos = "SELECT fecha, descripcion, monto FROM egresos";
+        $resultadoEgresos = $conn->query($sqlEgresos);
+
+        // Verificar si hay filas devueltas por la consulta de ingresos
+        if ($resultadoIngresos->num_rows > 0) {
+          // Recorrer los resultados de ingresos y generar las filas de la tabla
+          while ($fila = $resultadoIngresos->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $fila['fecha'] . "</td>";
+            echo "<td>" . $fila['descripcion'] . "</td>";
+            echo "<td>" . $fila['monto'] . "</td>";
+            echo "</tr>";
+          }
+        }
+
+        // Verificar si hay filas devueltas por la consulta de egresos
+        if ($resultadoEgresos->num_rows > 0) {
+          // Recorrer los resultados de egresos y generar las filas de la tabla
+          while ($fila = $resultadoEgresos->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $fila['fecha'] . "</td>";
+            echo "<td>" . $fila['descripcion'] . "</td>";
+            echo "<td>" . $fila['monto'] . "</td>";
+            echo "</tr>";
+          }
+        }
+
+        // Cerrar la conexión
+        $conn->close();
+        ?>
+
       </tbody>
     </table>
   </div>
@@ -103,5 +129,5 @@
     });
   </script>
 </body>
+
 </html>
-   

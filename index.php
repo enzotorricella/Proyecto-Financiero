@@ -37,7 +37,7 @@
         <div class="card bg-warning text-white mb-3">
           <div class="card-body">
             <h5 class="card-title ">Ahorros</h5>
-            <p class="card-text">$<?php echo $Ahorros ?></p>
+            <p class="card-text">$<?php echo $totalIngresos-$totalEgresos ?></p>
           </div>
         </div>
       </div>
