@@ -1,3 +1,12 @@
+<?php
+$Egresos=546
+?>
+<?php
+$Ingresos=623
+?>
+<?php
+$Ahorros=837
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,28 +16,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Panel de Control</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Transacciones.html">Transacciones</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Informes.html">Informes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Configuraciones.html">Configuración</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<?php require_once 'php/requires/nav.php'; ?>
   <br>
   <div class="container">
     <div class="row">
@@ -36,7 +24,7 @@
         <div class="card bg-success text-white mb-3">
           <div class="card-body">
             <h5 class="card-title">Ingresos</h5>
-            <p class="card-text">+$10,000</p>
+            <p class="card-text">+$<?php echo $Ingresos ?></p>
           </div>
         </div>
       </div>
@@ -44,7 +32,7 @@
         <div class="card bg-danger text-white mb-3">
           <div class="card-body">
             <h5 class="card-title">Egresos</h5>
-            <p class="card-text">-$7,000</p>
+            <p class="card-text">-$<?php echo $Egresos ?></p>
           </div>
         </div>
       </div>
@@ -52,7 +40,7 @@
         <div class="card bg-warning text-white mb-3">
           <div class="card-body">
             <h5 class="card-title ">Ahorros</h5>
-            <p class="card-text">$5,000</p>
+            <p class="card-text">$<?php echo $Ahorros ?></p>
           </div>
         </div>
       </div>
@@ -67,7 +55,7 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Registrar Transacción</h5>
-                <form>
+                <form action="Traspaso.php" method="post">
                   <div class="form-group">
                     <label for="categoria">Categoría</label>
                     <select class="form-control" id="categoria">
