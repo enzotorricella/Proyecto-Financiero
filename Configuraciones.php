@@ -38,8 +38,8 @@
         <input type="number" class="form-control" id="presupuesto">
       </div>
       <div class="form-group">
-        <label for="metas">Metas financieras:</label>
-        <input type="number" class="form-control" id="metas" rows="3">
+        <label for="presupuesto">Meta de ahorro:</label>
+        <input type="number" class="form-control" id="presupuesto">
       </div>
       <div class="form-group">
         <label for="idioma">Configuración de idioma:</label>
