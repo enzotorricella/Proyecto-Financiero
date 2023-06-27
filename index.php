@@ -111,7 +111,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <p>© 2023 Tu Compañía. Todos los derechos reservados.</p>
+        <p>© 2023 Enzo torricella. <br>Todos los derechos reservados.</p>
       </div>
       <div class="col-md-6 text-right">
         <p>Desarrollado por <img src="ruta-del-logo.png" alt="Logo"> </p>
