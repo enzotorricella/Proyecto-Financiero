@@ -14,9 +14,9 @@
         <li class="nav-item">
           <a class="nav-link" href="Informes.php">Informes</a>
         </li>
-        <li class="nav-item">
+        <!--<li class="nav-item">
           <a class="nav-link" href="Configuraciones.php">Configuración</a>
-        </li>
+        </li>-->
       </ul>
     </div>
   </nav>
