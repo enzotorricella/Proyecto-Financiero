@@ -107,6 +107,26 @@
         },
       });
     </script>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>© 2023 Tu Compañía. Todos los derechos reservados.</p>
+      </div>
+      <div class="col-md-6 text-right">
+        <p>Desarrollado por <img src="ruta-del-logo.png" alt="Logo"> </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Agrega el siguiente código JavaScript en la etiqueta <head> para obtener el año actualizado -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var year = new Date().getFullYear();
+    document.querySelector(".footer p:first-child").innerHTML = "© " + year + " Tu Compañía. Todos los derechos reservados.";
+  });
+</script>
 
 </body>
 
