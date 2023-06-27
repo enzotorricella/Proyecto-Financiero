@@ -1,4 +1,4 @@
-<?php require_once 'php/requires/Diccion.php'?>
+<?php require_once 'php/requires/Resumen.php'?>
 
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
         <div class="card bg-success text-white mb-3">
           <div class="card-body">
             <h5 class="card-title">Ingresos</h5>
-            <p class="card-text">+$<?php echo $Ingresos ?></p>
+            <p class="card-text">+$<?php echo $totalIngresos ?></p>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
         <div class="card bg-danger text-white mb-3">
           <div class="card-body">
             <h5 class="card-title">Egresos</h5>
-            <p class="card-text">-$<?php echo $Egresos ?></p>
+            <p class="card-text">-$<?php echo $totalEgresos ?></p>
           </div>
         </div>
       </div>
@@ -51,7 +51,8 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Registrar Transacción</h5>
+                <?php require_once 'php/requires/traspaso.php' ?>  
+                <h5 class="card-title">Registrar Transacción</h5>
                   <form action="" method="post">
                     <div class="form-group">
                       <label for="categoria">Categoría</label>
@@ -83,7 +84,7 @@
             </div>
           </div>
         </div>
-      </div><br><br>
+      </div>
     </div><br><br>
 
 
