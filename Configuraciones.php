@@ -39,7 +39,7 @@
       </div>
       <div class="form-group">
         <label for="metas">Metas financieras:</label>
-        <textarea class="form-control" id="metas" rows="3"></textarea>
+        <input type="number" class="form-control" id="metas" rows="3">
       </div>
       <div class="form-group">
         <label for="idioma">Configuración de idioma:</label>
