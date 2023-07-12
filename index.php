@@ -11,7 +11,7 @@
 
 <body>
   <?php require_once 'Controlador/conect.php' ?>
-  <?php require_once 'Modif_vista/nav.php'; ?>
+  <?php require_once 'Modif_vista\Requires\Nav.php'; ?>
   <br>
   <div class="container">
     <div class="row">

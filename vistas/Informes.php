@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-  <?php require_once 'php/requires/nav.php'; ?>
+  <?php require_once 'Modif_vista\Requires\Nav.php'; ?>
   <br>
       <div class="container">
         

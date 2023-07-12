@@ -1,4 +1,4 @@
-<?php require_once 'php/requires/Conect.php'; ?>
+<?php require_once 'Controlador\Conect.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <?php require_once 'php/requires/nav.php'; ?>
+  <?php require_once 'Modif_vista\Requires\Nav.php'; ?>
   <br>
   <div class="container">
     <div class="row">
