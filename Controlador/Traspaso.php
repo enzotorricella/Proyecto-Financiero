@@ -1,6 +1,7 @@
 <?php
 // Conexion a la base de datos
-require 'Conect.php';
+require 'Controlador/Conect.php';
+
 
 // Verificar si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

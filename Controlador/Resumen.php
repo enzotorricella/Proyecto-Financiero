@@ -1,6 +1,7 @@
 <?php
 // Conexion a la base de datos
-require 'Conect.php';
+require 'Controlador/Conect.php';
+
 
 // Consulta SQL para obtener la sumatoria de los montos de ingresos
 $sqlIngresos = "SELECT COALESCE(SUM(monto), 0) AS total FROM ingresos";
