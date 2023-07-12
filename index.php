@@ -1,3 +1,4 @@
+<?php require_once 'php/requires/Sesion.php' ?>
 <?php require_once 'php/requires/Resumen.php' ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -75,7 +76,7 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Consumos por Categoría</h5>
+                  <h5 class="card-title">Acumulado por Categoría</h5>
                   <canvas id="chart"></canvas>
                 </div>
               </div>
@@ -84,6 +85,7 @@
         </div>
       </div>
     </div><br><br>
+
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

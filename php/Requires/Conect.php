@@ -57,7 +57,7 @@ if ($conn->connect_error) {
     // Mostrar el mensaje de confirmación
     document.getElementById("confirmationMessage").style.display = "block";
 
-    // Esperar 3 segundos y ocultar el mensaje de confirmación
+    // Esperar 10 segundos y ocultar el mensaje de confirmación
     setTimeout(function() {
         document.getElementById("confirmationMessage").style.display = "none";
     }, 10000);
