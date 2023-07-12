@@ -1,5 +1,12 @@
-<?php require_once 'php/requires/Sesion.php' ?>
-<?php require_once 'php/requires/Resumen.php' ?>
+<?php
+require_once 'Controlador/Resumen.php';
+
+// Procesar el formulario de registro de transacción
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  require_once 'Controlador/traspaso.php';
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -11,8 +18,8 @@
 </head>
 
 <body>
-  <?php require_once 'php/requires/conect.php' ?>
-  <?php require_once 'php/requires/nav.php'; ?>
+  <?php require_once 'Controlador/conect.php'; ?>
+  <?php require_once 'Modif-vista/nav.php'; ?>
   <br>
   <div class="container">
     <div class="row">
@@ -42,7 +49,6 @@
       </div>
     </div>
     <div class="container">
-
       <br>
       <div class="container">
         <div class="container">
@@ -50,26 +56,26 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="card-body">
-                  <?php require_once 'php/requires/traspaso.php' ?>
                   <h5 class="card-title">Registrar Transacción</h5>
                   <form action="" method="post">
                     <div class="form-group">
                       <label for="categoria">Categoría</label>
-                      <select class="form-control" id="categoria" name="categoria">
+                      <select class="form-control" id="categoria" name="categoria" required>
                         <option value="ingreso">Ingreso</option>
                         <option value="egreso">Egreso</option>
                       </select>
                     </div>
                     <div class="form-group">
                       <label for="monto">Monto</label>
-                      <input type="number" class="form-control" id="monto" name="monto">
+                      <input type="number" class="form-control" id="monto" name="monto" min="0" required>
                     </div>
                     <div class="form-group">
                       <label for="descripcion">Descripción</label>
-                      <input type="text" class="form-control" id="descripcion" name="descripcion">
+                      <input type="text" class="form-control" id="descripcion" name="descripcion" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar</button>
                   </form>
+
                 </div>
               </div>
             </div>
@@ -86,13 +92,9 @@
       </div>
     </div><br><br>
 
-
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
       // Código JavaScript para la generación de la gráfica de consumos
       var ctx = document.getElementById('chart').getContext('2d');
@@ -116,15 +118,12 @@
         </div>
       </div>
     </footer>
-
-    <!-- Agrega el siguiente código JavaScript en la etiqueta <head> para obtener el año actualizado -->
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         var year = new Date().getFullYear();
         document.querySelector(".footer p:first-child").innerHTML = "© " + year + " Tu Compañía. Todos los derechos reservados.";
       });
     </script>
-
 </body>
 
 </html>

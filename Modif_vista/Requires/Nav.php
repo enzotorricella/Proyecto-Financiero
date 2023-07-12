@@ -9,14 +9,14 @@
           <a class="nav-link" href="index.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Transacciones.php">Transacciones</a>
+          <a class="nav-link" href="vistas/Transacciones.php">Transacciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Informes.php">Informes</a>
+          <a class="nav-link" href="vistas/Informes.php">Informes</a>
         </li>
-        <!--<li class="nav-item">
-          <a class="nav-link" href="Configuraciones.php">Configuración</a>
-        </li>-->
+        <li class="nav-item">
+          <a class="nav-link" href="vistas/Configuraciones.php">Configuración</a>
+        </li>
       </ul>
     </div>
   </nav>

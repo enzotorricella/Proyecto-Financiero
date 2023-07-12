@@ -3,7 +3,7 @@
 require 'Conect.php';
 
 // Consulta SQL para obtener la sumatoria de los montos de ingresos
-$sqlIngresos = "SELECT SUM(monto) AS total FROM ingresos";
+$sqlIngresos = "SELECT COALESCE(SUM(monto), 0) AS total FROM ingresos";
 
 // Ejecutar la consulta de ingresos
 $resultadoIngresos = $conn->query($sqlIngresos);
@@ -15,10 +15,8 @@ if ($resultadoIngresos->num_rows > 0) {
   $totalIngresos = $filaIngresos['total'];
 }
 
-
-
 // Consulta SQL para obtener la sumatoria de los montos de egresos
-$sqlEgresos = "SELECT SUM(monto) AS total FROM egresos";
+$sqlEgresos = "SELECT COALESCE(SUM(monto), 0) AS total FROM egresos";
 
 // Ejecutar la consulta de egresos
 $resultadoEgresos = $conn->query($sqlEgresos);
@@ -30,8 +28,7 @@ if ($resultadoEgresos->num_rows > 0) {
   $totalEgresos = $filaEgresos['total'];
 }
 
-
-
 // Cerrar la conexión
 $conn->close();
 ?>
+
