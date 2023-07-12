@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <?php require_once 'Modif_vista\Requires\Nav.php'; ?>
+  <?php require_once 'Modif_vista\Nav.php'; ?>
   <br>
   <div class="container">
     <div class="row">
