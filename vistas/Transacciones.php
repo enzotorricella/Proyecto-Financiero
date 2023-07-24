@@ -1,4 +1,4 @@
-<?php require_once 'Controlador\Conect.php'; ?>
+<?php require_once '/wamp64/www/Proyecto_Financiero/Controlador/Conect.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <?php require_once 'Modif_vista\Nav.php'; ?>
+  <?php require_once '/wamp64/www/Proyecto_Financiero/Modif_vista/Requires/Nav.php'; ?>
   <br>
   <div class="container">
     <div class="row">
@@ -43,43 +43,37 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Filas de transacciones -->
-        <?php
-        // Consulta SQL para obtener los datos de las transacciones de ingresos
-        $sqlIngresos = "SELECT fecha, descripcion, monto FROM ingresos";
-        $resultadoIngresos = $conn->query($sqlIngresos);
+      <?php
+// Consulta SQL para obtener los datos de las transacciones de ingresos y egresos, ordenados por fecha
+$sql = "SELECT fecha, descripcion, monto, 'Ingreso' as tipo FROM ingresos 
+        UNION ALL
+        SELECT fecha, descripcion, monto, 'Egreso' as tipo FROM egresos
+        ORDER BY fecha DESC";
 
-        // Consulta SQL para obtener los datos de las transacciones de egresos
-        $sqlEgresos = "SELECT fecha, descripcion, monto FROM egresos";
-        $resultadoEgresos = $conn->query($sqlEgresos);
+$resultado = $conn->query($sql);
 
-        // Verificar si hay filas devueltas por la consulta de ingresos
-        if ($resultadoIngresos->num_rows > 0) {
-          // Recorrer los resultados de ingresos y generar las filas de la tabla
-          while ($fila = $resultadoIngresos->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $fila['fecha'] . "</td>";
-            echo "<td>" . $fila['descripcion'] . "</td>";
-            echo "<td>" . $fila['monto'] . "</td>";
-            echo "</tr>";
-          }
-        }
+if ($resultado === false) {
+    die("Error en la consulta SQL: " . $conn->error);
+}
 
-        // Verificar si hay filas devueltas por la consulta de egresos
-        if ($resultadoEgresos->num_rows > 0) {
-          // Recorrer los resultados de egresos y generar las filas de la tabla
-          while ($fila = $resultadoEgresos->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $fila['fecha'] . "</td>";
-            echo "<td>" . $fila['descripcion'] . "</td>";
-            echo "<td>" . $fila['monto'] . "</td>";
-            echo "</tr>";
-          }
-        }
+if ($resultado->num_rows > 0) {
+  // Recorrer los resultados y generar las filas de la tabla
+  while ($fila = $resultado->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>" . $fila['fecha'] . "</td>";
+    echo "<td>" . $fila['descripcion'] . "</td>";
+    echo "<td>" . $fila['monto'] . "</td>";
+    echo "<td>" . $fila['tipo'] . "</td>";
+    echo "</tr>";
+  }
+} else {
+  echo "<tr><td colspan='4'>No se encontraron transacciones.</td></tr>";
+}
 
-        // Cerrar la conexión
-        $conn->close();
-        ?>
+// Cerrar la conexión
+$conn->close();
+?>
+
 
       </tbody>
     </table>

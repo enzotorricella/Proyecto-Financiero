@@ -2,7 +2,6 @@
 // Conexion a la base de datos
 require 'Controlador/Conect.php';
 
-
 // Verificar si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $categoria = $_POST['categoria'];
@@ -14,11 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $monto = $conn->real_escape_string($monto);
   $descripcion = $conn->real_escape_string($descripcion);
 
+  // Obtener la fecha actual en formato YYYY-MM-DD
+  $fecha = date("Y-m-d");
+
   // Determinar la tabla destino según la categoría seleccionada
   $tabla = ($categoria == 'ingreso') ? 'ingresos' : 'egresos';
 
-  // Crear la consulta de inserción
-  $sql = "INSERT INTO $tabla (monto, descripcion) VALUES ('$monto', '$descripcion')";
+  // Crear la consulta de inserción con la fecha actual
+  $sql = "INSERT INTO $tabla (fecha, monto, descripcion) VALUES ('$fecha', '$monto', '$descripcion')";
 
   // Ejecutar la consulta de inserción
   if ($conn->query($sql) === TRUE) {
@@ -57,10 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $conn->close();
 
   // Restablecer las variables a cero
-$categoria = '';
-$monto = 0;
-$descripcion = '';
-
+  $categoria = '';
+  $monto = 0;
+  $descripcion = '';
 }
 
 
