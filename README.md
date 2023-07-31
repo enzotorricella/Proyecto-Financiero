@@ -7,14 +7,19 @@ Esta herramienta te permite llevar un registro detallado de tus transacciones fi
 - Back-end: PHP (última versión estable) con el patrón de diseño Modelo-Vista-Controlador (MVC) para gestionar la lógica de la aplicación y la interacción con la base de datos.
 - Base de Datos: MySQL con phpMyAdmin para almacenar y gestionar las transacciones financieras y otros datos relevantes.
 ## Funcionalidades
+
 - **Registro de Ingresos y Egresos Diarios**: Podrás cargar tus ingresos y egresos diarios de forma rápida y sencilla. La interfaz intuitiva te permitirá añadir detalles como la categoría y la descripción de la transacción.
-Informes Mensuales y Anuales: En el futuro, se añadirá una sección de informes que te permitirá generar resúmenes mensuales y anuales de tus transacciones. Estos informes te brindarán una visión general de tus finanzas, ayudándote a analizar tus gastos, ingresos y tendencias financieras.
+
+-**Informes Mensuales y Anuales**: **En el futuro**, se añadirá una sección de informes que te permitirá generar resúmenes mensuales y anuales de tus transacciones.
+Estos informes te brindarán una visión general de tus finanzas, ayudándote a analizar tus gastos, ingresos y tendencias Financieras.
 
 - **Consulta de Transacciones Históricas:** Podrás acceder a todas tus transacciones históricas en un período específico, lo cual te permitirá revisar y analizar tu historial financiero. Podrás filtrar por fechas, categorías o tipos de transacciones para obtener información detallada sobre tus actividades financieras pasadas.
 
 - **Selección de Moneda:** La aplicación te ofrecerá la posibilidad de seleccionar la moneda utilizada para tus transacciones. Esto servirá para mostrar el símbolo de la moneda junto al valor de las transacciones, proporcionando una referencia visual.
 
-- **Establecimiento de Alertas:** Podrás establecer alertas personalizadas para evitar superar los límites financieros establecidos. Por ejemplo, podrás configurar una alerta que te avise cuando tus gastos mensuales superen un determinado umbral. Estas alertas te ayudarán a mantener un control riguroso sobre tus finanzas y tomar decisiones más informadas.
+- **Establecimiento de Alertas:** Podrás establecer alertas personalizadas para evitar superar los límites de gastos que tengas establecidos en la "Seccion configuraciones" establecidos.
+ **Por ejemplo**: podrás configurar una alerta que te avise cuando tus gastos mensuales superen un determinado umbral.
+  de la misma forma podrias seleccionar una meta de ahorro y el sistema te dara aviso cuando lo alcances.
 
 > Vista de Registro de Ingresos y Egresos Diarios:
 ![image](https://github.com/enzotorricella/Proyecto-Financiero/assets/66220181/d36a10c4-f6ea-4c92-a4bc-f8383439321a)
