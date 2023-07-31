@@ -10,7 +10,7 @@ Esta herramienta te permite llevar un registro detallado de tus transacciones fi
 
 - **Registro de Ingresos y Egresos Diarios**: Podrás cargar tus ingresos y egresos diarios de forma rápida y sencilla. La interfaz intuitiva te permitirá añadir detalles como la categoría y la descripción de la transacción.
 
--**Informes Mensuales y Anuales**: **En el futuro**, se añadirá una sección de informes que te permitirá generar resúmenes mensuales y anuales de tus transacciones.
+- **Informes Mensuales y Anuales**: **En el futuro**, se añadirá una sección de informes que te permitirá generar resúmenes mensuales y anuales de tus transacciones.
 Estos informes te brindarán una visión general de tus finanzas, ayudándote a analizar tus gastos, ingresos y tendencias Financieras.
 
 - **Consulta de Transacciones Históricas:** Podrás acceder a todas tus transacciones históricas en un período específico, lo cual te permitirá revisar y analizar tu historial financiero. Podrás filtrar por fechas, categorías o tipos de transacciones para obtener información detallada sobre tus actividades financieras pasadas.
